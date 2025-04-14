@@ -120,9 +120,11 @@ float ret = KalmanFilter_Refersh(&kf,measured_value);// measured_value 为测量
 ### 均值滤波器 Mean Filter
 
 值得注意的是均值滤波器同时也是个低通滤波器，有时候可以配合DMA操作实现高性能的低通滤波器。其截止频率为
+
 $$
 f_c = \frac{0.443*{f}_{sample}}{N}
 $$
+
 均值滤波器的使用方法如下。
 
 创建`MeanFilter`结构体，并使用`MeanFilter_Init`函数初始化结构体。需要在创建一个`float`类型数组以充当其数据缓冲。
@@ -201,9 +203,11 @@ float output = Pid_Refresh(&pid,error);
 ### 推力曲线 Thrust Cruve
 
 采用以下的推力-转速模型,，其中 $t_2$ 用于描述速度导致的推力衰减。
+
 $$
 F_{thrust} = t_1 \omega \left | \omega \right |  - t_2 v \left | \omega \right |
 $$
+
 创建`ThrustCruve`结构体，并使用`ThrustCruve_Init`初始化。
 
 ```C
