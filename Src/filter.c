@@ -11,10 +11,6 @@
 
 #include "filter.h"
 
-#include "stm32g4xx.h"
-
-#include "us_counter.h"
-
 /**
  * @brief 卡尔曼滤波器初始化
  *
